@@ -392,6 +392,24 @@ namespace HELPER
             }
             return loadedData;
         }
+
+        public static string ToString<T>(T[,] array)
+        {
+            StringBuilder sb = new StringBuilder();
+            int rows = array.GetLength(0);
+            int cols = array.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    sb.Append(array[i, j] + "\t");
+                }
+                sb.AppendLine();
+            }
+
+            return sb.ToString();
+        }
     }
 
     public static class ROTATION
